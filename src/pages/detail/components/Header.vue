@@ -36,11 +36,15 @@
         data(){
             return{
                 showAbs:true,
-                opacityStyle:0
+                opacityStyle:0,
+                i:''
             }
         },
-        activated(){
+        mounted(){
             window.addEventListener('scroll',this.handleScroll)
+        },
+        beforeDestroy(){
+            window.removeEventListener('scroll',this.handleScroll)
         }
     }
 </script>
@@ -61,6 +65,7 @@
             color:#fff
             font-size:20px
      .header-fixed
+         z-index:2
          position:fixed
          top:0
          left:0

@@ -25,9 +25,9 @@
             <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
                     <div class="item border-bottom" 
-                        :key="innerItem.id" 
-                        v-for="innerItem of item"
-                        @click="handleCityClick(innerItem.name)"
+                        :key = "innerItem.id"
+                        v-for = "innerItem of item"
+                        @click = "handleCityClick(innerItem.name)"
                         >{{innerItem.name}}</div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
     .title
         line-height:22px
         background:#eee
-        padding-left:1px
+        padding-left:15px
         color:#666
         font-size:13px
     .button-list
@@ -111,5 +111,5 @@
     .item-list
         .item
             line-height:38px
-            padding-left:1px
+            padding-left:20px
 </style>
