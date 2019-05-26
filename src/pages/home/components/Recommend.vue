@@ -7,7 +7,7 @@
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
-                    <button class="item-btn">查看详情</button>
+                    <button class="item-btn" >查看详情</button>
                 </div>
             </li>
         </ul>
@@ -58,6 +58,8 @@
                     margin-top:3px
                     background:#ff9300
                     padding:0 5px
-                    border-radius:3px
+                    border-radius:5px !important
+                    box-shadow:none !important
                     color:#fff
+                    
 </style>
