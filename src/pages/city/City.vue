@@ -1,9 +1,9 @@
 <template>
     <div>
         <city-header></city-header>
-        <city-search></city-search>
-        <city-list :cities="cities" :hot="hotCities" ></city-list>
-        <city-alphabet :cities="cities"></city-alphabet>
+        <city-search :cities="cities"></city-search>
+        <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
+        <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
     </div>
 </template>
 
@@ -22,6 +22,9 @@ import axios from 'axios'
             this.getCityInfo()
         },
         methods:{
+            handleLetterChange(letter){
+                this.letter = letter
+            },
             getCityInfo(){
                 axios.get('/api/city.json')
                 .then(this.handleGetCityInfoSucc)
@@ -34,11 +37,12 @@ import axios from 'axios'
                     this.hotCities = data.hotCities
                 }
             },
-            data (){
-                return{
-                    cities:{},
-                    hotCities:[]
-                }
+        },
+        data (){
+            return{
+                cities:{},
+                hotCities:[],
+                letter:''
             }
         }
     }
